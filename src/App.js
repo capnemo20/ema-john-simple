@@ -1,13 +1,16 @@
-import './App.css';
-import Header from './components/Header/Header';
-import Shop from './components/Shop/Shop';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import "./App.css";
+import Main from "./layouts/Main";
 
 function App() {
-  return (
+  const router = createBrowserRouter([
+    { path: "/",
+     element: <Main></Main> 
+    }
+  ]);
+  return ( 
     <div>
-     <Header></Header>
-     <Shop></Shop>
-
+      <RouterProvider router = {router}></RouterProvider>
     </div>
   );
 }
