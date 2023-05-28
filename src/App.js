@@ -14,6 +14,7 @@ function App() {
       children: [
         {
           path: "/",
+          loader: () => fetch("products.json"),
           element: <Shop></Shop>,
         },
         {
@@ -21,9 +22,12 @@ function App() {
           element: <Inventory></Inventory>,
         },
         {
-          path:"/orders",
-          element:<Orders></Orders>
-        }
+          path: "/orders",
+          loader: () => {
+            return fetch("products.json");
+          },
+          element: <Orders></Orders>,
+        },
       ],
     },
     {
