@@ -7,7 +7,7 @@ export const productsAndCartLoader = async () => {
 
   //get cart
   const savedCart = getStoredCart();
-  const previousCart = [];
+  const initialCart = [];
   //   console.log("saved cart",savedCart);
 //   console.log(products);
 
@@ -17,10 +17,10 @@ export const productsAndCartLoader = async () => {
     if (addedProduct){
         const quantity = savedCart[id];
         addedProduct.quantity =  quantity;
-        previousCart.push(addedProduct);
+        initialCart.push(addedProduct);
 
     }
   }
 
-  return {products, previousCart};
+  return {products, initialCart};
 };
